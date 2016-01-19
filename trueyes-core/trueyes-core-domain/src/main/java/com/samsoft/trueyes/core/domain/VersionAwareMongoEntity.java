@@ -3,9 +3,6 @@
  */
 package com.samsoft.trueyes.core.domain;
 
-import java.util.Date;
-
-import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Version;
 
 /**
@@ -22,9 +19,6 @@ public abstract class VersionAwareMongoEntity extends AbstractMongoEntity {
 	@Version
 	protected long version;
 
-	@CreatedDate
-	protected Date dateCreated;
-
 	/**
 	 * @return the version
 	 */
@@ -40,24 +34,7 @@ public abstract class VersionAwareMongoEntity extends AbstractMongoEntity {
 		this.version = version;
 	}
 
-	/**
-	 * @return the dateCreated
-	 */
-	protected Date getDateCreated() {
-		return dateCreated;
-	}
-
-	/**
-	 * @param dateCreated
-	 *            the dateCreated to set
-	 */
-	protected void setDateCreated(Date dateCreated) {
-		this.dateCreated = dateCreated;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
+	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -65,8 +42,8 @@ public abstract class VersionAwareMongoEntity extends AbstractMongoEntity {
 		StringBuilder builder = new StringBuilder();
 		builder.append("VersionAwareMongoEntity [version=");
 		builder.append(version);
-		builder.append(", dateCreated=");
-		builder.append(dateCreated);
+		builder.append(", id=");
+		builder.append(id);
 		builder.append("]");
 		return builder.toString();
 	}
