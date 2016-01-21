@@ -22,7 +22,7 @@ public abstract class VersionAwareMongoEntity extends AbstractMongoEntity {
 	/**
 	 * @return the version
 	 */
-	protected long getVersion() {
+	public long getVersion() {
 		return version;
 	}
 
@@ -30,7 +30,7 @@ public abstract class VersionAwareMongoEntity extends AbstractMongoEntity {
 	 * @param version
 	 *            the version to set
 	 */
-	protected void setVersion(long version) {
+	public void setVersion(long version) {
 		this.version = version;
 	}
 
