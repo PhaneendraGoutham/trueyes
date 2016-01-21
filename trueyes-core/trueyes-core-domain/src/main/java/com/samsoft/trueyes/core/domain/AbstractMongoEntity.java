@@ -21,7 +21,7 @@ public abstract class AbstractMongoEntity implements Serializable {
 	/**
 	 * @return the id
 	 */
-	protected String getId() {
+	public String getId() {
 		return id;
 	}
 

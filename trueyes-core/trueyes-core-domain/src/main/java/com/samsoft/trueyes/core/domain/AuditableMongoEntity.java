@@ -7,7 +7,6 @@ import java.time.LocalDate;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.annotation.Version;
 
 /**
  * @author kumar
@@ -19,9 +18,6 @@ public abstract class AuditableMongoEntity extends VersionAwareMongoEntity {
 	 * serialVersionUID
 	 */
 	private static final long serialVersionUID = -67203638183725497L;
-
-	@Version
-	protected long version;
 
 	@CreatedDate
 	protected LocalDate dateCreated;

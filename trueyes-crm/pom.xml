@@ -10,5 +10,8 @@
   <packaging>pom</packaging>
   <modules>
   	<module>trueyes-crm-domain</module>
+  	<module>trueyes-crm-repo</module>
+  	<module>trueyes-crm-api</module>
+  	<module>trueyes-crm-impl</module>
   </modules>
 </project>

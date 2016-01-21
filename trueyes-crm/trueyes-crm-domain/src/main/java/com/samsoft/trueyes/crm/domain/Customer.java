@@ -3,10 +3,13 @@
  */
 package com.samsoft.trueyes.crm.domain;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 /**
  * @author kumar
  *
  */
+@Document
 public class Customer extends BusinessEntity {
 
 	/**
