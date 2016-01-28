@@ -7,7 +7,7 @@ import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.samsoft.trueyes.crm.api.CustomerService;
@@ -35,13 +35,18 @@ public class CustomerServiceMongoImpl implements CustomerService {
 	}
 
 	@Override
-	public Page<Customer> find(PageRequest pageRequest) {
-		return find(pageRequest);
+	public Page<Customer> find(Pageable pageRequest) {
+		return repository.findAll(pageRequest);
 	}
 
 	@Override
 	public Customer save(Customer t) {
 		return repository.save(t);
+	}
+
+	@Override
+	public Customer findByMobile(String mobile) {
+		return repository.findByMobile(mobile);
 	}
 
 }

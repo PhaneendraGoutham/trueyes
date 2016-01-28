@@ -6,7 +6,7 @@ package com.samsoft.trueyes.core.api;
 import java.util.Collection;
 
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 
 /**
  * @author kumar
@@ -36,5 +36,5 @@ public interface CRUDService<T> {
 	 * @param pageRequest
 	 * @return
 	 */
-	Page<T> find(PageRequest pageRequest);
+	Page<T> find(Pageable pageRequest);
 }

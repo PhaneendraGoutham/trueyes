@@ -13,4 +13,6 @@ import com.samsoft.trueyes.crm.domain.Customer;
  */
 public interface CustomerMongoRepository extends MongoRepository<Customer, String> {
 
+	Customer findByMobile(String mobile);
+
 }

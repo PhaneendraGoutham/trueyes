@@ -3,7 +3,7 @@
  */
 package com.samsoft.trueyes.crm.domain;
 
-import javax.validation.constraints.Size;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -29,12 +29,12 @@ public class BusinessEntity extends AuditableMongoEntity {
 
 	protected String address;
 
-	@NotEmpty
-	@Size(min = 10, max = 11)
-	@Indexed(background=false,unique=true,sparse=true)
+	@Pattern(regexp = "^[789]\\d{9}$")
+	@Indexed(background = false, unique = true, sparse = true)
 	protected String mobile;
 
 	@Email
+	@Indexed(background = true, unique = true)
 	protected String email;
 
 	/**
