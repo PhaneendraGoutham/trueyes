@@ -8,6 +8,8 @@ import java.time.LocalDate;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * @author kumar
  *
@@ -23,6 +25,7 @@ public abstract class AuditableMongoEntity extends VersionAwareMongoEntity {
 	protected LocalDate dateCreated;
 
 	@LastModifiedDate
+	@JsonIgnore
 	protected LocalDate lastUpdated;
 
 	/**

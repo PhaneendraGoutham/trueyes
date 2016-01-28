@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: crm
+server:
+  port: 8001

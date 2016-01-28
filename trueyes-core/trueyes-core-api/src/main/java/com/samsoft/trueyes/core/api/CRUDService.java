@@ -29,6 +29,8 @@ public interface CRUDService<T> {
 	 */
 	Collection<T> list();
 
+	T save(T t);
+
 	/**
 	 * 
 	 * @param pageRequest

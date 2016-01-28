@@ -13,5 +13,6 @@
   	<module>trueyes-crm-repo</module>
   	<module>trueyes-crm-api</module>
   	<module>trueyes-crm-impl</module>
+  	<module>trueyes-crm-web</module>
   </modules>
 </project>
