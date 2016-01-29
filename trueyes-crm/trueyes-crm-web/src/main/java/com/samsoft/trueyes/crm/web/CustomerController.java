@@ -61,7 +61,7 @@ public class CustomerController extends AbstractRestController<Customer> {
 	public EyePrescription savePrescription(@PathVariable String id, @RequestBody @Valid EyePrescription prescription,
 			BindingResult bindingResult) throws BadRequestException {
 
-		if (bindingResult.hasErrors()) {
+		if (bindingResult.hasErrors() && !bindingResult.hasFieldErrors("customer")) {
 			logger.error("Binding error while saving eye prescription");
 			throw new BadRequestException(bindingResult);
 		}
