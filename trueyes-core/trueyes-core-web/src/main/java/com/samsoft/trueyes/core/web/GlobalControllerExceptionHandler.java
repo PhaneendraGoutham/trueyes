@@ -48,7 +48,17 @@ public class GlobalControllerExceptionHandler {
 	@ResponseBody
 	public Map<String, String> handleDataIntegrityViolationException(DataIntegrityViolationException exception) {
 
-		logger.error("Handle DataIntegrityViolationException",exception);
+		logger.error("Handle DataIntegrityViolationException", exception);
+		Map<String, String> map = new HashMap<>(1);
+		map.put("error", exception.getMessage());
+		return map;
+	}
+
+	@ExceptionHandler(value = { ResourceNotFoundException.class })
+	@ResponseStatus(value = HttpStatus.NOT_FOUND)
+	@ResponseBody
+	public Map<String, String> handleResourceNotFoundException(ResourceNotFoundException exception) {
+		logger.warn("Handle ResourceNotFoundException", exception);
 		Map<String, String> map = new HashMap<>(1);
 		map.put("error", exception.getMessage());
 		return map;

@@ -1,5 +1,21 @@
 spring:
-  application:
-    name: crm
+  profiles:
+    active: dev
 server:
-  port: 8001
+  port: 8000
+  
+---
+
+spring:
+  profiles: dev
+  data:
+   mongodb:
+      database: trueyes-dev
+
+---
+
+spring:
+  profiles: prod
+  data:
+   mongodb:
+      database: trueyes-prod
