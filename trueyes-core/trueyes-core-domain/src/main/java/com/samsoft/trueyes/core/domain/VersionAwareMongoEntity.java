@@ -5,6 +5,8 @@ package com.samsoft.trueyes.core.domain;
 
 import org.springframework.data.annotation.Version;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * @author kumar
  *
@@ -17,6 +19,7 @@ public abstract class VersionAwareMongoEntity extends AbstractMongoEntity {
 	private static final long serialVersionUID = -7337210911285362222L;
 
 	@Version
+	@JsonIgnore
 	protected long version;
 
 	/**

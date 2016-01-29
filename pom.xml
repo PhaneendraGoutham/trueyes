@@ -99,5 +99,6 @@
 	<modules>
 		<module>trueyes-core</module>
 		<module>trueyes-crm</module>
+		<module>trueyes-order</module>
 	</modules>
 </project>

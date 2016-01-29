@@ -36,28 +36,33 @@ public class CustomerServiceTest {
 	@Autowired
 	EyePrescriptionService prescService;
 
+	private static final int COUNT = 10;
+
 	@Test
 	public void testSave() {
 
-		Person person = FAIRY.person();
-		Customer customer = new Customer();
-		customer.setAddress(person.getAddress().toString());
-		customer.setEmail(person.email());
-		customer.setFullName(person.fullName());
-		customer.setMobile("852654" + RandomUtils.nextInt(9999));
+		for (int i = 0; i < COUNT; i++) {
 
-		customer = customerService.save(customer);
+			Person person = FAIRY.person();
+			Customer customer = new Customer();
+			customer.setAddress(person.getAddress().toString());
+			customer.setEmail(person.email());
+			customer.setFullName(person.fullName());
+			customer.setMobile("852654" + RandomUtils.nextInt(9999));
 
-		Assert.assertNotNull(customer);
+			customer = customerService.save(customer);
 
-		Assert.assertTrue(customer.getId().length() > 0);
+			Assert.assertNotNull(customer);
 
-		EyePrescription prescription = new EyePrescription();
+			Assert.assertTrue(customer.getId().length() > 0);
 
-		prescription.setCustomer(customer);
-		prescription.setLeft(new EyeSight(1.25f));
-		prescription.setRight(new EyeSight(2.25f));
-		prescService.save(prescription, customer.getId());
+			EyePrescription prescription = new EyePrescription();
+
+			prescription.setCustomer(customer);
+			prescription.setLeft(new EyeSight(1.25f));
+			prescription.setRight(new EyeSight(2.25f));
+			prescService.save(prescription, customer.getId());
+		}
 
 	}
 
