@@ -3,8 +3,10 @@
  */
 package com.samsoft.trueyes.crm.impl.test;
 
-import static org.junit.Assert.*;
-
+import org.apache.commons.lang.math.RandomUtils;
+import org.jfairy.Fairy;
+import org.jfairy.producer.person.Person;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,10 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.samsoft.trueyes.crm.api.CustomerService;
+import com.samsoft.trueyes.crm.api.EyePrescriptionService;
+import com.samsoft.trueyes.crm.domain.Customer;
+import com.samsoft.trueyes.crm.domain.EyePrescription;
+import com.samsoft.trueyes.crm.domain.EyePrescription.EyeSight;
 import com.samsoft.trueyes.crm.impl.CustomerServiceConfiguration;
 
 /**
@@ -22,12 +28,37 @@ import com.samsoft.trueyes.crm.impl.CustomerServiceConfiguration;
 @ContextConfiguration(classes = { CustomerServiceConfiguration.class })
 public class CustomerServiceTest {
 
+	private static final Fairy FAIRY = Fairy.create();
+
 	@Autowired
 	CustomerService customerService;
 
+	@Autowired
+	EyePrescriptionService prescService;
+
 	@Test
-	public void test() {
-		assertNotNull(customerService);
+	public void testSave() {
+
+		Person person = FAIRY.person();
+		Customer customer = new Customer();
+		customer.setAddress(person.getAddress().toString());
+		customer.setEmail(person.email());
+		customer.setFullName(person.fullName());
+		customer.setMobile("852654" + RandomUtils.nextInt(9999));
+
+		customer = customerService.save(customer);
+
+		Assert.assertNotNull(customer);
+
+		Assert.assertTrue(customer.getId().length() > 0);
+
+		EyePrescription prescription = new EyePrescription();
+
+		prescription.setCustomer(customer);
+		prescription.setLeft(new EyeSight(1.25f));
+		prescription.setRight(new EyeSight(2.25f));
+		prescService.save(prescription, customer.getId());
+
 	}
 
 }

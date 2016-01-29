@@ -43,4 +43,9 @@ public abstract class AbstractRestController<T> {
 		}
 		return service.save(t);
 	}
+
+	@RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
+	public void delete(@PathVariable String id) {
+		service.delete(id);
+	}
 }

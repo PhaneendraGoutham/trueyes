@@ -37,4 +37,6 @@ public interface CRUDService<T> {
 	 * @return
 	 */
 	Page<T> find(Pageable pageRequest);
+
+	boolean delete(String id);
 }

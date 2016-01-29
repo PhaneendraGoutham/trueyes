@@ -11,6 +11,7 @@ import javax.validation.constraints.NotNull;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.samsoft.trueyes.core.domain.AuditableMongoEntity;
 
 /**
@@ -37,6 +38,43 @@ public class EyePrescription extends AuditableMongoEntity {
 		public short axis;
 		public float add;
 
+		public EyeSight() {
+		}
+
+		/**
+		 * @param sph
+		 * @param cyl
+		 * @param axis
+		 */
+		public EyeSight(float sph, float cyl, short axis) {
+			super();
+			this.sph = sph;
+			this.cyl = cyl;
+			this.axis = axis;
+		}
+
+		/**
+		 * @param sph
+		 */
+		public EyeSight(float sph) {
+			super();
+			this.sph = sph;
+		}
+
+		/**
+		 * @param sph
+		 * @param cyl
+		 * @param axis
+		 * @param add
+		 */
+		public EyeSight(float sph, float cyl, short axis, float add) {
+			super();
+			this.sph = sph;
+			this.cyl = cyl;
+			this.axis = axis;
+			this.add = add;
+		}
+
 		/*
 		 * (non-Javadoc)
 		 * 
@@ -56,8 +94,9 @@ public class EyePrescription extends AuditableMongoEntity {
 	@Valid
 	protected EyeSight right;
 
-	@DBRef
+	@DBRef(lazy = true)
 	@NotNull
+	@JsonIgnore
 	protected Customer customer;
 
 	/**
@@ -88,6 +127,21 @@ public class EyePrescription extends AuditableMongoEntity {
 	 */
 	public void setRight(EyeSight right) {
 		this.right = right;
+	}
+
+	/**
+	 * @return the customer
+	 */
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	/**
+	 * @param customer
+	 *            the customer to set
+	 */
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
 	/*

@@ -49,4 +49,10 @@ public class CustomerServiceMongoImpl implements CustomerService {
 		return repository.findByMobile(mobile);
 	}
 
+	@Override
+	public boolean delete(String id) {
+		repository.delete(id);
+		return true;
+	}
+
 }

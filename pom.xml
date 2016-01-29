@@ -25,6 +25,12 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
+			<groupId>org.jfairy</groupId>
+			<artifactId>jfairy</artifactId>
+			<version>0.3.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-logging</artifactId>
 		</dependency>

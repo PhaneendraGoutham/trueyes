@@ -12,6 +12,5 @@ import com.samsoft.trueyes.crm.domain.Customer;
  */
 public interface CustomerService extends CRUDService<Customer> {
 
-	
 	Customer findByMobile(String mobile);
 }
