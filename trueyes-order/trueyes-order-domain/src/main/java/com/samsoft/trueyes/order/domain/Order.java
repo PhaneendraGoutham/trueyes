@@ -24,4 +24,5 @@ public class Order extends AuditableMongoEntity {
 	@DBRef(lazy = true)
 	@JsonIdentityReference(alwaysAsId = true)
 	protected Customer customer;
+
 }

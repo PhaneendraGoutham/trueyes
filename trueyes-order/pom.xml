@@ -10,5 +10,6 @@
   <packaging>pom</packaging>
   <modules>
   	<module>trueyes-order-domain</module>
+  	<module>trueyes-order-api</module>
   </modules>
 </project>
