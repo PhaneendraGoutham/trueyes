@@ -10,7 +10,9 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
+import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.samsoft.trueyes.crm.api.CustomerService;
@@ -25,7 +27,9 @@ import com.samsoft.trueyes.crm.impl.CustomerServiceConfiguration;
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { CustomerServiceConfiguration.class })
+@SpringApplicationConfiguration(classes = { CustomerServiceConfiguration.class })
+@ActiveProfiles("dev")
+@TestPropertySource(locations = { "classpath:application.properties" })
 public class CustomerServiceTest {
 
 	private static final Fairy FAIRY = Fairy.create();
@@ -36,10 +40,13 @@ public class CustomerServiceTest {
 	@Autowired
 	EyePrescriptionService prescService;
 
-	private static final int COUNT = 10;
+	private static final int COUNT = 1;
 
 	@Test
 	public void testSave() {
+		
+		
+		
 
 		for (int i = 0; i < COUNT; i++) {
 

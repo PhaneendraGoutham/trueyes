@@ -3,7 +3,7 @@
  */
 package com.samsoft.trueyes.core.domain;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -22,11 +22,11 @@ public abstract class AuditableMongoEntity extends VersionAwareMongoEntity {
 	private static final long serialVersionUID = -67203638183725497L;
 
 	@CreatedDate
-	protected Date dateCreated;
+	protected LocalDate dateCreated;
 
 	@LastModifiedDate
 	@JsonIgnore
-	protected Date lastUpdated;
+	protected LocalDate lastUpdated;
 
 	/**
 	 * @return the version
@@ -46,7 +46,7 @@ public abstract class AuditableMongoEntity extends VersionAwareMongoEntity {
 	/**
 	 * @return the dateCreated
 	 */
-	public Date getDateCreated() {
+	public LocalDate getDateCreated() {
 		return dateCreated;
 	}
 
@@ -54,14 +54,14 @@ public abstract class AuditableMongoEntity extends VersionAwareMongoEntity {
 	 * @param dateCreated
 	 *            the dateCreated to set
 	 */
-	public void setDateCreated(Date dateCreated) {
+	public void setDateCreated(LocalDate dateCreated) {
 		this.dateCreated = dateCreated;
 	}
 
 	/**
 	 * @return the lastUpdated
 	 */
-	public Date getLastUpdated() {
+	public LocalDate getLastUpdated() {
 		return lastUpdated;
 	}
 
@@ -69,7 +69,7 @@ public abstract class AuditableMongoEntity extends VersionAwareMongoEntity {
 	 * @param lastUpdated
 	 *            the lastUpdated to set
 	 */
-	public void setLastUpdated(Date lastUpdated) {
+	public void setLastUpdated(LocalDate lastUpdated) {
 		this.lastUpdated = lastUpdated;
 	}
 
