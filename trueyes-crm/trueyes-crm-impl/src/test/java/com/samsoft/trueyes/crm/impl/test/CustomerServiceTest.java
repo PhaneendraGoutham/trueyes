@@ -40,13 +40,10 @@ public class CustomerServiceTest {
 	@Autowired
 	EyePrescriptionService prescService;
 
-	private static final int COUNT = 1;
+	private static final int COUNT = 100;
 
 	@Test
 	public void testSave() {
-		
-		
-		
 
 		for (int i = 0; i < COUNT; i++) {
 
@@ -66,8 +63,8 @@ public class CustomerServiceTest {
 			EyePrescription prescription = new EyePrescription();
 
 			prescription.setCustomer(customer);
-			prescription.setLeft(new EyeSight(1.25f));
-			prescription.setRight(new EyeSight(2.25f));
+			prescription.setLeft(new EyeSight(RandomUtils.nextFloat() - 2));
+			prescription.setRight(new EyeSight(RandomUtils.nextFloat() - 2));
 			prescService.save(prescription, customer.getId());
 		}
 
