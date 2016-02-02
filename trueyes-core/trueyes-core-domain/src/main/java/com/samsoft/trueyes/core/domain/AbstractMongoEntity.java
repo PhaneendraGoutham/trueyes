@@ -8,7 +8,7 @@ import org.springframework.data.annotation.Id;
  * @author kumar
  *
  */
-public abstract class AbstractMongoEntity implements Serializable {
+public abstract class AbstractMongoEntity implements Serializable, IdAware<String> {
 
 	/**
 	 * serialVersionUID
@@ -18,9 +18,12 @@ public abstract class AbstractMongoEntity implements Serializable {
 	@Id
 	protected String id;
 
-	/**
-	 * @return the id
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.samsoft.trueyes.core.domain.IdAware#getId()
 	 */
+	@Override
 	public String getId() {
 		return id;
 	}
@@ -29,7 +32,8 @@ public abstract class AbstractMongoEntity implements Serializable {
 	 * @param id
 	 *            the id to set
 	 */
-	protected void setId(String id) {
+	@Override
+	public void setId(String id) {
 		this.id = id;
 	}
 

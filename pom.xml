@@ -102,5 +102,6 @@
 		<module>trueyes-crm</module>
 		<module>trueyes-order</module>
 		<module>trueyes-webfront</module>
+		<module>trueyes-inventory</module>
 	</modules>
 </project>
