@@ -1,9 +1,9 @@
-angular.module('trueyes', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
+angular.module('trueyes', ['ui.bootstrap', 'ui.utils', 'ui.router', 'ngAnimate', 'root', 'home']);
 
 angular.module('trueyes').config(function($stateProvider, $urlRouterProvider) {
 
     /* Add New States Above */
-    $urlRouterProvider.otherwise('/admin');
+    $urlRouterProvider.otherwise('/home');
 
 });
 
