@@ -14,7 +14,7 @@ import java.time.LocalDate;
  */
 public interface Effectivity {
 
-	LocalDate startDate();
+	LocalDate from();
 
-	LocalDate endDate();
+	LocalDate to();
 }

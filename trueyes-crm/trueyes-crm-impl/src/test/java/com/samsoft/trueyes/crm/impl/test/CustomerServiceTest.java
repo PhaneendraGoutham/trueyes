@@ -40,11 +40,11 @@ public class CustomerServiceTest {
 	@Autowired
 	EyePrescriptionService prescService;
 
-	private static final int COUNT = 100;
+	private static final int COUNT = 50;
 
 	@Test
 	public void testSave() {
-
+		
 		for (int i = 0; i < COUNT; i++) {
 
 			Person person = FAIRY.person();

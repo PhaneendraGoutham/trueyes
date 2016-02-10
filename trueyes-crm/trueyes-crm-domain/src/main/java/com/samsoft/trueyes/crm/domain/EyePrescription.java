@@ -94,7 +94,7 @@ public class EyePrescription extends AuditableMongoEntity {
 	@Valid
 	protected EyeSight right;
 
-	@DBRef(lazy = true)
+	@DBRef(lazy = false)
 	@NotNull
 	@JsonIgnore
 	protected Customer customer;

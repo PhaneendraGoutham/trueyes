@@ -23,8 +23,6 @@ import com.samsoft.trueyes.crm.repo.CustomerMongoRepository;
 @ContextConfiguration(classes = { CRMMongoRepositoryConfig.class })
 public class CustomerMongoRepositoryTest {
 
-	// TODO : Write other repo test cases.
-
 	@Autowired
 	public CustomerMongoRepository repo;
 

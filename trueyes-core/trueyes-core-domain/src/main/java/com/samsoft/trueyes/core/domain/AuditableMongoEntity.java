@@ -7,8 +7,8 @@ import java.time.LocalDate;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.data.mongodb.core.index.IndexDirection;
+import org.springframework.data.mongodb.core.index.Indexed;
 
 /**
  * @author kumar
@@ -22,10 +22,10 @@ public abstract class AuditableMongoEntity extends VersionAwareMongoEntity {
 	private static final long serialVersionUID = -67203638183725497L;
 
 	@CreatedDate
+	@Indexed(direction = IndexDirection.DESCENDING, background = true)
 	protected LocalDate dateCreated;
 
 	@LastModifiedDate
-	@JsonIgnore
 	protected LocalDate lastUpdated;
 
 	/**

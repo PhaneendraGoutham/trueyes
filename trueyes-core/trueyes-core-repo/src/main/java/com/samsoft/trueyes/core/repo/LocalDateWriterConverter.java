@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.samsoft.trueyes.crm.repo;
+package com.samsoft.trueyes.core.repo;
 
 import java.time.LocalDate;
 

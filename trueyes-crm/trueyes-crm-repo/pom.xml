@@ -20,6 +20,11 @@
 			<artifactId>trueyes-crm-domain</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>com.samsoft.trueyes.core.repo</groupId>
+			<artifactId>trueyes-core-repo</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 </project>

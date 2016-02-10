@@ -18,5 +18,6 @@
 		<module>trueyes-core-domain</module>
 		<module>trueyes-core-api</module>
 		<module>trueyes-core-web</module>
+		<module>trueyes-core-repo</module>
 	</modules>
 </project>
