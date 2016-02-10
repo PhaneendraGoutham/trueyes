@@ -12,8 +12,9 @@ angular.module('root').config(function($stateProvider) {
                     };
                 }
             },
-            controller: function($scope) {
+            controller: function($scope, currentUser) {
                 console.debug('root controller');
+                console.debug(currentUser);
             },
             templateUrl: 'root/layout.html',
         });
