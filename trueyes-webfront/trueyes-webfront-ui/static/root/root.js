@@ -13,7 +13,7 @@ angular.module('root').config(function($stateProvider) {
                 }
             },
             controller: function($scope) {
-                console.debug('root state controller');
+                console.debug('root controller');
             },
             templateUrl: 'root/layout.html',
         });

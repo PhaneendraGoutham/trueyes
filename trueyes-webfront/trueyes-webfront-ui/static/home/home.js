@@ -7,10 +7,8 @@ angular.module('home').config(function($stateProvider) {
         parent: 'root',
         views: {
             'mainContent': {
-                template: 'This is main content',
-                controller: function() {
-                    console.log("this is home dashboard controller");
-                }
+                templateUrl: '/home/partial/home/home.html',
+                controller: 'HomeCtrl'
             }
         }
     });
