@@ -1,4 +1,4 @@
-angular.module('trueyes', ['ui.bootstrap', 'ui.utils', 'ui.router', 'ngAnimate', 'root', 'home']);
+angular.module('trueyes', ['ui.bootstrap', 'ui.utils', 'ui.router', 'ngAnimate', 'root', 'home', 'customer', 'inventory', 'orders', 'reports']);
 
 angular.module('trueyes').config(function($stateProvider, $urlRouterProvider) {
 

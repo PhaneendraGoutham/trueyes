@@ -27,6 +27,22 @@
       {
         "name": "home",
         "file": "home\\home.js"
+      },
+      {
+        "name": "customer",
+        "file": "customer\\customer.js"
+      },
+      {
+        "name": "inventory",
+        "file": "inventory\\inventory.js"
+      },
+      {
+        "name": "orders",
+        "file": "orders\\orders.js"
+      },
+      {
+        "name": "reports",
+        "file": "reports\\reports.js"
       }
     ]
   }
