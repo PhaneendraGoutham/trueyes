@@ -26,8 +26,6 @@ import com.samsoft.trueyes.core.domain.TenantAwareAuditableMongoEntity;
 
 /**
  * 
- * 
- * 
  * @author sambhav.jain
  *
  */
@@ -83,12 +81,13 @@ public class RegisteredUser extends TenantAwareAuditableMongoEntity implements U
 	}
 
 	/**
-	 * Wilt randome password and default roles.
+	 * Wilt random password and default roles and a tenant.
 	 * 
 	 * @param username
 	 */
-	public RegisteredUser(String username) {
+	public RegisteredUser(String username, String tenant, boolean dummy) {
 		this(username, "alsdkfhalksdfalksdjf@123", true, true, true, true, DEFAULT_ROLES);
+		this.tenant = tenant;
 	}
 
 	/**

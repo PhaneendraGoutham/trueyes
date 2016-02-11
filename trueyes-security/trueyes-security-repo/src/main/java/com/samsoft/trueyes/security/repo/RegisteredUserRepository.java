@@ -15,4 +15,6 @@ import com.samsoft.trueyes.security.domain.RegisteredUser;
 @Repository
 public interface RegisteredUserRepository extends MongoRepository<RegisteredUser, String> {
 
+	RegisteredUser findByUsername(String username);
+
 }

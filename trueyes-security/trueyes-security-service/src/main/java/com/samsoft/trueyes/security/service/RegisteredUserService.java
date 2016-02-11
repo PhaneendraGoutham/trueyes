@@ -3,22 +3,15 @@
  */
 package com.samsoft.trueyes.security.service;
 
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Service;
+
+import com.samsoft.trueyes.security.domain.RegisteredUser;
 
 /**
  * @author sambhav.jain
  *
  */
-@Service
-public class RegisteredUserService implements UserDetailsService {
+public interface RegisteredUserService extends UserDetailsService {
 
-	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	RegisteredUser register(RegisteredUser user);
 }
