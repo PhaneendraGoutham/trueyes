@@ -6,5 +6,5 @@ spring:
 zuul:
  routes:
   customer:
-   path: /customer/**
+   path: /customer-resource/**
    url: http://localhost:8000/

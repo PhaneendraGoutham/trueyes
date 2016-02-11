@@ -4,7 +4,22 @@ angular.module('customer').config(function($stateProvider) {
 
     $stateProvider.state('list-customer', {
         url: '/customer/list',
-        templateUrl: 'customer/partial/list-customer/list-customer.html'
+        parent: 'root',
+        views: {
+            'mainContent': {
+                templateUrl: 'customer/partial/list-customer/list-customer.html',
+                controller: 'ListCustomerCtrl'
+            }
+        },
+        resolve: {
+            customers: function(currentUser) {
+                console.debug("Getting customer page");
+                return [{
+                    name: 'Sambhav'
+                }];
+            }
+        }
+
     });
     $stateProvider.state('edit-customer', {
         url: '/customer/:id',

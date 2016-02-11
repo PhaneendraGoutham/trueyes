@@ -1,4 +1,3 @@
-angular.module('customer').controller('ListCustomerCtrl',function($scope){
-
-
+angular.module('customer').controller('ListCustomerCtrl', function($scope, customers) {
+    $scope.customers = customers;
 });
