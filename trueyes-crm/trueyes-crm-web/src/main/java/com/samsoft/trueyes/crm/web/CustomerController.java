@@ -31,7 +31,7 @@ import com.samsoft.trueyes.crm.domain.EyePrescription;
  */
 
 @RestController
-@RequestMapping("/customer")
+//@RequestMapping("/customer")
 public class CustomerController extends AbstractRestController<Customer> {
 
 	private static final Logger logger = LoggerFactory.getLogger(CustomerController.class);
