@@ -5,12 +5,14 @@ package com.samsoft.trueyes.webfront.ui;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 /**
  * @author sambhav.jain
  *
  */
 @SpringBootApplication
+@EnableZuulProxy
 public class WebfrontUIApplication {
 
 	/**
