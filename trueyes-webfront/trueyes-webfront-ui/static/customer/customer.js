@@ -12,11 +12,9 @@ angular.module('customer').config(function($stateProvider) {
             }
         },
         resolve: {
-            customers: function(currentUser) {
+            customers: function(currentUser, customerService) {
                 console.debug("Getting customer page");
-                return [{
-                    name: 'Sambhav'
-                }];
+                return customerService.list();
             }
         }
 
