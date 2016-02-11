@@ -1,0 +1,18 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.samsoft.trueyes</groupId>
+		<artifactId>trueyes</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>com.samsoft.trueyes.security</groupId>
+	<artifactId>trueyes-security</artifactId>
+	<packaging>pom</packaging>
+	<modules>
+		<module>trueyes-security-oauth2</module>
+		<module>trueyes-security-model</module>
+		<module>trueyes-security-repo</module>
+		<module>trueyes-security-service</module>
+	</modules>
+</project>

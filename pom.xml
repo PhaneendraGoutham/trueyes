@@ -103,5 +103,6 @@
 		<module>trueyes-order</module>
 		<module>trueyes-webfront</module>
 		<module>trueyes-inventory</module>
+		<module>trueyes-security</module>
 	</modules>
 </project>
