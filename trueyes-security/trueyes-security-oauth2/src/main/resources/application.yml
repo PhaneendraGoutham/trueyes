@@ -1,15 +1,15 @@
 spring:
- application:
-  name: oauth2Server
+  application:
+    name: oauth2Server
 server:
- port: 9999
- context-path: /uaa
+  port: 9999
+  context-path: /uaa
 security:
- user:
-  password: password
- oauth2:
-  client:
-   client-id: acme
-   client-secret: acmesecret
-   authorized-grant-types: authorization_code,refresh_token,password
-   scopes: openid
+  user:
+    password: password
+  oauth2:
+    client:
+      client-id: acme
+      client-secret: acmesecret
+      authorized-grant-types: authorization_code,refresh_token,password
+      scope: openid
