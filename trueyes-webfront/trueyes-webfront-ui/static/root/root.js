@@ -6,10 +6,14 @@ angular.module('root').config(function($stateProvider) {
         .state('root', {
             abstract: true,
             resolve: {
-                currentUser: function() {
-                    return {
-                        name: 'Sambhav'
-                    };
+                currentUser: function($http) {
+                    return $http.get('/user').then(function(success) {
+                        console.log(success);
+                        return success;
+                    }, function(error) {
+                        console.log(error);
+                        return {auth:0};
+                    });
                 }
             },
             controller: function($scope, currentUser) {
