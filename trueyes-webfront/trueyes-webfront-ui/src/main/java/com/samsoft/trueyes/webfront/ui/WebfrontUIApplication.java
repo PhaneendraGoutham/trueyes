@@ -68,9 +68,19 @@ public class WebfrontUIApplication extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/**/*.html", "/**/*.js", "/**/*.less", "/**/*.css").permitAll()
-				.anyRequest().authenticated().and().csrf().csrfTokenRepository(csrfTokenRepository()).and()
+		//@formatter:off
+		http
+			.authorizeRequests()
+			.antMatchers("/**/*.html", "/**/*.js", "/**/*.less", "/**/*.css")
+			.permitAll()
+				.anyRequest()
+				.authenticated()
+			.and()
+				.csrf()
+				.csrfTokenRepository(csrfTokenRepository())
+			.and()
 				.addFilterAfter(new CsrfHeaderFilter(), CsrfFilter.class);
+		//@formatter:off
 	}
 
 }

@@ -7,13 +7,9 @@ angular.module('root').config(function($stateProvider) {
             abstract: true,
             resolve: {
                 currentUser: function($http) {
-                    return $http.get('/user').then(function(success) {
-                        console.log(success);
-                        return success;
-                    }, function(error) {
-                        console.log(error);
-                        return {auth:0};
-                    });
+                    return {
+                        name: 'Sambhav'
+                    };
                 }
             },
             controller: function($scope, currentUser) {
