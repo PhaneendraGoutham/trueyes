@@ -8,7 +8,7 @@ angular.module('crmModule').config(function($stateProvider) {
         resolve : {
         	customers : function(currentUser,$http){
         		return $http.get('customer/list').then(function(success){
-        			return success;
+        			return success.data;
         		},function(error){
         			console.warn('Error while fetching customers');
         			return null;
