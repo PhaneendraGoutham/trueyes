@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: oauth2Server
+server:
+  port: 9999
+  context-path: /uaa
+security:
+  user:
+    password: password

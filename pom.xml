@@ -88,6 +88,24 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.3</version>
+				<executions>
+					<execution>
+						<id>generate-javadoc</id>
+						<phase>install</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<inherited>false</inherited>
+						<configuration>
+							<defaultAuthor>Kumar Sambhav Jain</defaultAuthor>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-eclipse-plugin</artifactId>
 				<version>2.10</version>
 				<configuration>
@@ -103,5 +121,6 @@
 		<module>trueyes-order</module>
 		<module>trueyes-webfront</module>
 		<module>trueyes-inventory</module>
+		<module>trueyes-security</module>
 	</modules>
 </project>

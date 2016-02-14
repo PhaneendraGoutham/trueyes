@@ -40,7 +40,7 @@ public class CustomerServiceTest {
 	@Autowired
 	EyePrescriptionService prescService;
 
-	private static final int COUNT = 50;
+	private static final int COUNT = 23;
 
 	@Test
 	public void testSave() {

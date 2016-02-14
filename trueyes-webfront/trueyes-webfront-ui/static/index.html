@@ -9,8 +9,8 @@
 </head>
 
 <body>
-    <!-- Livereload script for development only (stripped during dist build) -->
-    <script src="http://localhost:35729/livereload.js" data-concat="false"></script>
+    <!-- Livereload script for development only (stripped during dist build)
+    <script src="http://localhost:35729/livereload.js" data-concat="false"></script> -->
     <!-- JS from Bower Components -->
     <script src="bower_components/less.js/dist/less-1.6.2.js" data-concat="false"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -26,19 +26,13 @@
     <!-- Add New Bower Component JS Above -->
     <!-- Main App JS -->
     <script src="app.js"></script>
-    <script src="root/root.js"></script>
-    <script src="home/home.js"></script>
-    <script src="home/partial/home/home.js"></script>
-    <script src="customer/customer.js"></script>
-    <script src="inventory/inventory.js"></script>
-    <script src="orders/orders.js"></script>
-    <script src="reports/reports.js"></script>
-    <script src="customer/partial/list-customer/list-customer.js"></script>
-    <script src="customer/partial/edit-customer/edit-customer.js"></script>
-    <script src="customer/service/customer-service.js"></script>
+    <script src="root-module/root-module.js"></script>
+    <script src="home-module/home-module.js"></script>
+    <script src="home-module/partial/dashboard/dashboard.js"></script>
+    <script src="crm-module/crm-module.js"></script>
+    <script src="crm-module/partial/list-customer/list-customer.js"></script>
     <!-- Add New Component JS Above -->
-    <div id="content" ui-view>
-    </div>
+    <div id="content" ui-view></div>
 </body>
 
 </html>

@@ -1,9 +1,12 @@
-angular.module('trueyes', ['ui.bootstrap', 'ui.utils', 'ui.router', 'ngAnimate', 'root', 'home', 'customer', 'inventory', 'orders', 'reports']);
+angular.module('trueyes', ['ui.bootstrap', 'ui.utils', 'ui.router', 'ngAnimate', 'rootModule', 'homeModule', 'crmModule']);
 
-angular.module('trueyes').config(function($stateProvider, $urlRouterProvider) {
+angular.module('trueyes').config(function($stateProvider, $urlRouterProvider, $httpProvider) {
 
     /* Add New States Above */
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/dashboard');
+
+    // To distinguish ajax call with normal http calls.
+    $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 });
 
