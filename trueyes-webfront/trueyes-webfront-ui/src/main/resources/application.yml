@@ -24,8 +24,8 @@ security:
 zuul:
   routes:
     resource:
-      path: /resource/**
-      url: http://localhost:9000/resource
+      path: /customer/**
+      url: http://localhost:9000/customer
     user:
       path: /user/**
       url: http://localhost:9999/uaa/user
