@@ -28,7 +28,6 @@ import org.springframework.security.oauth2.provider.token.store.KeyStoreKeyFacto
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /**
@@ -40,7 +39,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  *
  */
 @SpringBootApplication
-//@EnableAuthorizationServer
 @EnableResourceServer
 @RestController
 @SessionAttributes("authorizationRequest")
@@ -49,12 +47,6 @@ public class AuthorizationServer extends WebMvcConfigurerAdapter {
 	@RequestMapping("/user")
 	public Principal user(Principal user) {
 		return user;
-	}
-
-	@Override
-	public void addViewControllers(ViewControllerRegistry registry) {
-		registry.addViewController("/login").setViewName("login");
-		registry.addViewController("/oauth/confirm_access").setViewName("authorize");
 	}
 
 	public static void main(String[] args) {
@@ -113,13 +105,17 @@ public class AuthorizationServer extends WebMvcConfigurerAdapter {
 					.withClient("acme").secret("acmesecret")
 					.authorizedGrantTypes("authorization_code", "refresh_token", "password")
 					.scopes("openid")
-					.autoApprove(true);
+					.autoApprove(false);
 			// @formatter:on
 		}
 
 		@Override
 		public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-			endpoints.authenticationManager(authenticationManager).accessTokenConverter(jwtAccessTokenConverter());
+			// @formatter:off
+			endpoints
+				.authenticationManager(authenticationManager)
+				.accessTokenConverter(jwtAccessTokenConverter());
+			// @formatter:on
 		}
 
 		@Override

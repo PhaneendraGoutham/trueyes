@@ -3,8 +3,12 @@
  */
 package com.samsoft.trueyes.core.web;
 
+import java.security.Principal;
+
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -22,6 +26,8 @@ import com.samsoft.trueyes.core.api.CRUDService;
  */
 public abstract class AbstractRestController<T> {
 
+	private static final Logger logger = LoggerFactory.getLogger(AbstractRestController.class);
+
 	@Autowired
 	protected CRUDService<T> service;
 
@@ -31,7 +37,8 @@ public abstract class AbstractRestController<T> {
 	}
 
 	@RequestMapping(method = RequestMethod.GET, value = "/list")
-	public Page<T> find(Pageable pageRequest) {
+	public Page<T> find(Pageable pageRequest, Principal principal) {
+		logger.debug("Customer page requested by user {}", principal);
 		return service.find(pageRequest);
 	}
 

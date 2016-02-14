@@ -5,6 +5,7 @@ angular.module('trueyes').config(function($stateProvider, $urlRouterProvider, $h
     /* Add New States Above */
     $urlRouterProvider.otherwise('/home');
 
+    // To distinguish ajax call with normal http calls.
     $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 });
