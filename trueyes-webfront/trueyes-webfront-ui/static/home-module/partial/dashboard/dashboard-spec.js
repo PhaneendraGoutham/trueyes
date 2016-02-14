@@ -1,12 +1,12 @@
-describe('EditCustomerCtrl', function() {
+describe('DashboardCtrl', function() {
 
-	beforeEach(module('customer'));
+	beforeEach(module('homeModule'));
 
 	var scope,ctrl;
 
     beforeEach(inject(function($rootScope, $controller) {
       scope = $rootScope.$new();
-      ctrl = $controller('EditCustomerCtrl', {$scope: scope});
+      ctrl = $controller('DashboardCtrl', {$scope: scope});
     }));	
 
 	it('should ...', inject(function() {

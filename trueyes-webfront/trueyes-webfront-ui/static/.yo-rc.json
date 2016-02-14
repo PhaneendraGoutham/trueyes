@@ -21,28 +21,16 @@
     },
     "modules": [
       {
-        "name": "root",
-        "file": "root\\root.js"
+        "name": "rootModule",
+        "file": "root-module\\root-module.js"
       },
       {
-        "name": "home",
-        "file": "home\\home.js"
+        "name": "homeModule",
+        "file": "home-module\\home-module.js"
       },
       {
-        "name": "customer",
-        "file": "customer\\customer.js"
-      },
-      {
-        "name": "inventory",
-        "file": "inventory\\inventory.js"
-      },
-      {
-        "name": "orders",
-        "file": "orders\\orders.js"
-      },
-      {
-        "name": "reports",
-        "file": "reports\\reports.js"
+        "name": "crmModule",
+        "file": "crm-module\\crm-module.js"
       }
     ]
   }

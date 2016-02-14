@@ -1,6 +1,6 @@
 describe('ListCustomerCtrl', function() {
 
-	beforeEach(module('customer'));
+	beforeEach(module('crmModule'));
 
 	var scope,ctrl;
 

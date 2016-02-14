@@ -4,7 +4,6 @@ spring:
 server:
   port: 9000
   context-path: /customer
-
 security:
   oauth2:
     resource:
