@@ -1,6 +1,13 @@
 spring:
   aop:
     proxy-target-class: true
+security:
+  oauth2:
+    client:
+      client-id: acme
+      client-secret: acmesecret
+      scope: read,write
+      auto-approve-scopes: .*
 facebook:
   client:
     clientId: 233668646673605
@@ -12,6 +19,18 @@ facebook:
     clientAuthenticationScheme: form
   resource:
     userInfoUri: https://graph.facebook.com/me
+google:
+  client:
+    clientId: 49860416388-jrf9ppm3qfhnd4afc2etpvqd72mifasu.apps.googleusercontent.com
+    clientSecret: vumFlHMsa7EoT3BxHPhDS_3Z
+    accessTokenUri: https://www.googleapis.com/oauth2/v4/token
+    userAuthorizationUri: https://accounts.google.com/o/oauth2/v2/auth
+    scope: https://www.googleapis.com/auth/plus.me,https://www.googleapis.com/auth/plus.login,https://www.googleapis.com/auth/userinfo.email,https://www.googleapis.com/auth/userinfo.profile,profile,email
+    tokenName: access_token
+    accessType: online
+    grantType: authorization_code
+  resource:
+    userInfoUri: https://www.googleapis.com/plus/v1/people/me
 zuul:
   routes:
     customer:

@@ -68,7 +68,7 @@
 			<id>sts</id>
 			<activation>
 				<!-- TODO: Use file/system property rather than active by default. -->
-				<activeByDefault>true</activeByDefault>
+				<activeByDefault>false</activeByDefault>
 			</activation>
 			<dependencies>
 				<dependency>
