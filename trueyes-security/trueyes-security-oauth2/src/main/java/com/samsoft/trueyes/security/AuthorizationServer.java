@@ -105,7 +105,7 @@ public class AuthorizationServer extends WebMvcConfigurerAdapter {
 					.withClient("acme").secret("acmesecret")
 					.authorizedGrantTypes("authorization_code", "refresh_token", "password")
 					.scopes("openid")
-					.autoApprove(false);
+					.autoApprove(true);
 			// @formatter:on
 		}
 
